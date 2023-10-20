@@ -1,10 +1,18 @@
 import React from "react";
 import Form from "../Form";
+import { useState } from "react";
 
 export default function Content() {
-    return (
-        <>
-            <h2>Accueil</h2>
-        </>
-    )
+    const [isChecked, setIsChecked] = useState(false)
+
+    const checking = ()=>{
+        setIsChecked(!isChecked);
+        console.log(isChecked);
+    }
+  return (
+    <>
+      <input type="checkbox" onClick={checking}/>
+      <p style={{ color: true ? 'blue' : 'red'}} >Lorem ipsum dolor sit amet.</p>
+    </>
+  )
 }
